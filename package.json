@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack serve --open"
+    "dev": "webpack serve --open",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint:test": "yarn lint:eslint && yarn lint:prettier --check",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:prettier --write",
+    "lint:eslint": "eslint --cache .",
+    "lint:prettier": "prettier ."
   },
   "author": "",
   "license": "ISC",
@@ -20,8 +25,10 @@
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
+    "@jobtalk/eslint-config": "^3.0.0",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "jest": "^28.1.1",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.1",
     "style-loader": "^3.3.1",
